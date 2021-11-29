@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Admin</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="icon" type="image/png" href="images/favicon-16x16.png" sizes="32x32" />
+    <script>
+        // if (window.location.hostname != "compscikids.net") {
+        //     window.location = "https://compscikids.net/admin.html"
+        // }
+    </script>
+</head>
+
+<body>
+    <div id="main">
+
+        <!-- One -->
+        <section id="one">
+            <div class="image main" data-position="center">
+                <img src="images/banner.jpg" alt="" />
+
+            </div>
+
+            <div class="container">
+                <header class="major">
+                    <h2 align="center" id="adminT">Admin Login</h2>
+                    <form method="post" action="#">
+                        <div class="row gtr-uniform">
+
+                            <div class="col-12"><input type="text" id="user" placeholder="Username" /></div>
+                            <div class="col-12"><input type="password" id="pass" placeholder="Password" /></div>
+                        </div>
+                    </form>
+                    <div class="col-12">
+                        <p id="error" align="center"></p>
+                        <ul class="actions">
+                            <li align="center"><input type="submit" class="primary" value="Submit" id="submitR"
+                                    onclick="runT()"></li>
+                        </ul>
+                    </div>
+                    <!--a href="http://html5up.net">HTML5 UP</a>.</p> -->
+                </header>
+            </div>
+
+            <script>
+                function runT() {
+                    var user = document.getElementById("user").value;
+                    var pass = document.getElementById("pass").value;
+
+
+                    $.ajax({
+                        url: 'https://api.compscikids.net/login',
+                        type: 'POST',
+                        dataType: 'json',
+                        data: JSON.stringify({ username: user, password: pass }),
+                        contentType: "application/json; charset=utf-8",
+                        success: function (result) {
+                            var token = result.token;
+                            if (token != null) {
+                                document.getElementById("error").innerHTML = "";
+                                window.sessionStorage.setItem("token", token); //ALWAYS STORE TOKEN UNDER PARENT WEBSITE
+                                window.location.pathname = "/edit.html";//Use this code to switch pages
+                                console.log(token);
+                            }
+                            else {
+                                document.getElementById("error").innerHTML = "Incorrect Password";
+                            }
+                        }
+                    });
+
+                }
+            </script>
+            <script src="assets/js/jquery.min.js"></script>
+        </section>
+    </div>
+
+</body>
+
+</html>

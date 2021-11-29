@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="google-site-verification" content="sOSYFKe9nr8d8dMqXMGCfgqyRPJcM88UAAzh5cV7lgg" />
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125583578-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "UA-125583578-1");
+  </script>
+  <title>Registration</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="icon" type="image/png" href="images/favicon-16x16.png" sizes="32x32" />
+  <style>
+    input[type="date"]:before {
+      content: attr(placeholder) !important;
+      color: #aaa;
+      margin-right: 0.5em;
+    }
+
+    input[type="date"]:focus:before,
+    input[type="date"]:valid:before {
+      content: "";
+    }
+  </style>
+  <script>
+    function register(e){
+      var bData = document.getElementById("dob").value.split("/")
+      bData = "" + bData[2] + "-" + bData[0] + "-" + bData[1]
+      document.getElementById("dob").value = bData 
+      // console.log(bData)
+      return true
+    }
+  </script>
+</head>
+
+<body>
+  <div class="container">
+    <h3 align="center" id="regTitle"></h3>
+    <h3 align="center" id="regSubTitle"></h3>
+    <p id="info"></p>
+    <form action="https://api.compscikids.net/register" method="post" onsubmit="return register()">
+      <h4 align="center" class="registerT" id="test">Parent Information</h4>
+      <div class="row gtr-uniform">
+        <div class="col-6 col-12-xsmall">
+          <select id="prefix" name="parentPrefix" required>
+            <option value="" selected hidden>Prefix</option>
+            <option value="Mr">Mr</option>
+            <option value="Ms">Mrs</option>
+            <option value="Mrs">Ms</option>
+          </select>
+        </div>
+        <div class="col-6 col-12-xsmall">
+          <input type="text" id="fName" name="parentName" placeholder="Full Name" required />
+        </div>
+        <div class="col-6 col-12-xsmall">
+          <select id="relationship" name="parentRelationship" required>
+            <option value="" selected hidden>Relationship</option>
+            <option value="Mother">Mother</option>
+            <option value="Father">Father</option>
+            <option value="Guardian">Other (Guardian)</option>
+          </select>
+        </div>
+        <!--Fix pattern in telephone-->
+        <div class="col-6 col-12-xsmall">
+          <input type="tel" id="telephone" placeholder="Phone: xxx-xxx-xxxx" title="Phone Number" name="parentPhone"
+            required />
+        </div>
+        <div class="col-12">
+          <input type="email" name="email" id="email" placeholder="Email" required />
+        </div>
+      </div>
+      <h4 align="center" class="registerT">Emergency Contact</h4>
+      <div class="row gtr-uniform">
+        <div class="col-6 col-12-xsmall">
+          <select id="prefix2" name="emergencyPrefix" required>
+            <option value="" selected hidden>Prefix</option>
+            <option value="Mr">Mr</option>
+            <option value="Ms">Mrs</option>
+            <option value="Mrs">Ms</option>
+          </select>
+        </div>
+        <div class="col-6 col-12-xsmall">
+          <input type="text" id="fName2" placeholder="Full Name" name="emergencyName" required />
+        </div>
+        <div class="col-6 col-12-xsmall">
+          <select id="relationship2" name="emergencyRelationship" required>
+            <option value="" selected hidden>Relationship</option>
+            <option value="Mother">Mother</option>
+            <option value="Father">Father</option>
+            <option value="Guardian">Other</option>
+          </select>
+        </div>
+        <!--Fix pattern in telephone-->
+        <div class="col-6 col-12-xsmall">
+          <input type="tel" id="telephone2" placeholder="Phone: xxx-xxx-xxxx" title="Phone Number" name="emergencyPhone"
+            required />
+        </div>
+      </div>
+      <h4 align="center" class="registerT">Student Information</h4>
+      <div class="row gtr-uniform">
+        <div class="col-6 col-12-xsmall">
+          <input type="text" id="firstName" placeholder="First Name" name="firstName" required />
+        </div>
+        <div class="col-6 col-12-xsmall">
+          <input type="text" id="lastName" placeholder="Last Name" name="lastName" required />
+        </div>
+        <div class="col-6 col-12-xsmall">
+          <select id="gender" name="gender" required>
+            <option value="" selected hidden>Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="col-6 col-12-xsmall">
+          <input style="height: 2.75em; width: 100%; padding-left: 14px; border-radius: 5px; border: solid 2px #e4e4e4;"
+            type="text"  pattern="\d{2}/\d{2}/\d{4}" id="dob" placeholder="Birthday" name="birthday" required />
+            <p>Please input Birthday in the Format MM/DD/YYYY</p>
+        </div>
+        <div class="col-6 col-12-xsmall">
+          <input type="number" id="grade" placeholder="Grade" name="grade" required />
+        </div>
+        <div class="col-6 col-12-xsmall">
+          <input type="text" id="school" placeholder="School" name="school" required />
+        </div>
+        <div class="col-6 col-12-xsmall">
+          <select id="size" name="shirtSize" required>
+            <option value="" selected hidden>Shirt Size</option>
+            <option value="ys">Youth Small</option>
+            <option value="ym">Youth Medium</option>
+            <option value="yl">Youth Large</option>
+            <option value="as">Adult Small</option>
+            <option value="am">Adult Medium</option>
+            <option value="al">Adult Large</option>
+            <option value="ax">Adult X-Large</option>
+          </select>
+        </div>
+        <div class="col-6 col-12-xsmall">
+          <input type="number" id="sessions" placeholder="Num of sessions attended" name="previousSessions" required />
+        </div>
+      </div>
+      <h4 align="center" class="registerT advanced">Advanced</h4>
+      <div class="row gtr-uniform advanced">
+        <input style="width: 25px; height: 25px; padding: 0; float: left; margin-left: 30px" id="applyAdvanced"
+          type="checkbox" name="appliedAdvanced" />
+        <p style="margin-bottom: 0; margin-left: 20px; margin-top: 5px; padding: 0;">
+          Check to apply to be in the advanced class
+        </p>
+        <p id="advancedText"></p>
+      </div>
+      <div class="col-12">
+        <ul class="actions">
+          <li align="center">
+            <input type="submit" class="primary" value="Submit" id="submitR" />
+          </li>
+        </ul>
+      </div>
+      <input id="sessionInput" type="hidden" name="session" value="" />
+      <input id="sectionInput" type="hidden" name="section" value="" />
+    </form>
+  </div>
+
+  <script>
+    var urlParams = new URLSearchParams(window.location.search);
+    document.getElementById("sessionInput").value = urlParams.get("session")
+    document.getElementById("sectionInput").value = urlParams.get("section")
+    document.getElementById("regTitle").innerHTML =
+      "CompSci Kids " +
+      (urlParams.get("waitlist") == "0" ? "Registration" : "Waitlist") +
+      " for Grades " +
+      urlParams.get("section");
+    document.getElementById("regSubTitle").innerHTML =
+      urlParams.get("display") + " Session";
+    schoolN = "Conant High School";
+    document.getElementById("info").innerHTML =
+      "If you are registering for online content there is no fee and no T-shirt will be given out.  For online content,  please use a gmail account only. Parents, please fill out this form. By signing up, you are committing to a $20 sign up fee which will be used for a T-shirt and other materials the students will take home. Payment is due by the first day of class and can be paid as a check made out to " +
+      schoolN +
+      " with the memo CompSci Kids given to the " +
+      schoolN +
+      " cashier or brought on the first day of instruction. All teachers are volunteer students.  If the fee provides financial hardship to you, please contact " +
+      "cskids211@gmail.com." +
+      " Any other questions or concerns can also be emailed to cskids211@gmail.com. There are only 26 spots open per level available first come, first serve.";
+    document.getElementById("advancedText").innerHTML =
+      'By selecting "Advanced", you are affirming that your child has attended at least two sessions at the ' +
+      urlParams.get("section") +
+      " level or you wish to appeal for your child's placement. The appeal process will involve a short description as to why you believe your child is prepared for the advanced level and will be further detailed in an email you will receive shortly after registering. Moving to an advanced level is not recommended for new students.";
+    console.log(urlParams.get("advanced"));
+    if (urlParams.get("advanced") == 0) {
+      var e = document.getElementsByClassName("advanced");
+      for (i = 0; i < e.length; i++) {
+        e[i].style.display = "none";
+      }
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,222 @@
+.yui3-button {
+    margin: 10px 0px 10px 0px;
+    color: #fff;
+    background-color: #3476b7;
+}
+#bannerImage {
+    object-position: center;
+}
+
+
+.face {
+    width: 15vw;
+    height: 15vw;
+    object-fit:cover;
+    border-radius: 10%;
+}
+
+#people-container, #founder-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+    flex-flow: wrap-reverse;
+    /* Take out above if you want people to be in order */
+    
+}
+
+.personDiv {
+    text-align: center;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by defalt */
+    position: fixed; /* Stay in place */
+    z-index: 4; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+
+.modal-header {
+    font-size: 35px;
+    color: #000;
+    font-weight: bolder;
+    text-decoration: underline;
+}
+
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 35%;
+    color: #0a0a0a;
+    text-align: center;
+    display: inline-block;
+    margin-bottom: 100px;
+    border-radius: 20px;
+    border: 5px solid rgb(12, 65, 150);
+}
+
+.modal {
+    font-size:25px;
+}
+
+/* The Close Button */
+.closeModal {
+    color: #000000;
+    font-size: 25px;
+    font-weight: bold;
+    width: 3vw;
+    height: auto;
+}
+
+.closeModal:hover,
+.closeModal:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modalImage {
+    width: 15vw;
+    height: auto;
+    border-radius: 15%;
+    
+}
+
+.modalTitle {
+    font-size: 22px;
+    color: black;
+}
+
+.modalText {
+    font-size: 17px;
+    color: black;
+    text-align: center;
+    padding-top: 25px;
+}
+
+.closeModal {
+    background-color: #d33232;
+    color: #ffffff !important;
+    border-radius: 7.5%;
+    border-color: #d33232;
+    width: 100px;
+    height: 45px;
+    font-size: 25px;
+}
+
+
+.modal2 {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .modal-content2 {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 60px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+  
+  /* The Close Button */
+  .close2 {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close2:hover,
+  .close2:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+
+.hyperLink {
+    color: blue;
+    text-decoration: underline;
+    -webkit-text-decoration-color: blue; /* Safari */  
+    text-decoration-color: blue;
+}
+
+.backButton {
+    box-shadow:inset 0px 1px 0px 0px #97c4fe;
+    background:linear-gradient(to bottom, #3d94f6 5%, #1e62d0 100%);
+    background-color:#3d94f6;
+    border-radius:6px;
+    border:1px solid #337fed;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:15px;
+    font-weight:bold;
+    padding:12px 19px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #1570cd;
+}
+.backButton:hover {
+    background:linear-gradient(to bottom, #1e62d0 5%, #3d94f6 100%);
+    background-color:#1e62d0;
+}
+.backButton:active {
+    position:relative;
+    top:1px;
+}
+
+@media only screen and (max-width: 980px) {
+
+    .face {
+        width: 35vw;
+        height: 35vw;
+        object-fit:cover;
+        border-radius: 10%;
+    }
+
+    .modal-content {
+        width: 85%;
+        /* border-radius: 2%; */
+    }
+
+    .modalTitle {
+        font-size: 15px;
+    }
+
+    .modalImage {
+        width: 50vw;
+        height: auto;
+        border-radius: 15%;
+    }
+
+
+    .modalText {
+        font-size: 15px;
+    }
+
+}
+
+h3 {}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="google-site-verification" content="sOSYFKe9nr8d8dMqXMGCfgqyRPJcM88UAAzh5cV7lgg" />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125583578-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-125583578-1');
+    </script>
+    <title>Registration</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="https://compscikids.net/assets/css/main.css" />
+    <link rel="icon" type="image/png" href="images/favicon-16x16.png" sizes="32x32" />
+    <style>
+        input[type="date"]:before {
+            content: attr(placeholder) !important;
+            color: #aaa;
+            margin-right: 0.5em;
+        }
+
+        input[type="date"]:focus:before,
+        input[type="date"]:valid:before {
+            content: "";
+        }
+    </style>
+    <script>
+        function backHome() {
+            window.location.href = "https://compscikids.net";
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container" style="width: 100%; text-align: center; margin-top: 20%;">
+        <h1 align:"center" style="width: 100%; text-align: center; font-size: 5vw; color: red">Thank You For
+            Registering!</h1>
+        <h2 align:"center" style="width: 100%; text-align: center; font-size: 30px;">Please check your email for a
+            confirmation on your registration. If you did not recieve it, please check spam, and move the email to
+            your inbox, so you will recieve future communications.</h2>
+        <input type="submit" class="primary" value="Back Home" onclick="backHome()">
+    </div>
+
+</body>
+
+</html>
